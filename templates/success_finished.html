@@ -1,6 +1,34 @@
 <html>
-    <head>idk and idc</head>
+    <head>
+    	<title>Success</title>
+    	<style type="text/css">
+    		#load{
+    width:100%;
+    height:100%;
+    position:fixed;
+    z-index:9999;
+    background:url("loader.gif") no-repeat center center
+}
+    	</style>>
+    </head>
     <body>
-        <img src="{{ imag }}"/>
-        <p>DONE YES DONE</p>
+    	<div id="load"></div>
+        <img id="contents" style="" src="{{ imag }}"/>
+        
     </body>
+    	<script type="text/javascript">
+    		
+    		document.onreadystatechange = function () {
+  var state = document.readyState
+  if (state == 'interactive') {
+       document.getElementById('contents').style.visibility="hidden";
+  } else if (state == 'complete') {
+      setTimeout(function(){
+         document.getElementById('interactive');
+         document.getElementById('load').style.visibility="hidden";
+         document.getElementById('contents').style.visibility="visible";
+      },1000);
+  }
+}
+    	</script>
+    </html>
